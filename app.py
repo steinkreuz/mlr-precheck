@@ -28,7 +28,6 @@ if st.button("Run Compliance Audit"):
     else:
         try:
             client = anthropic.Anthropic(api_key=os.getenv("ANTHROPIC_API_KEY"))
-
             with st.spinner("Analyzing against 21 CFR Part 202 and EU Directive 2001/83/EC..."):
                 message = client.messages.create(
                     model="claude-sonnet-4-20250514",
@@ -38,19 +37,18 @@ if st.button("Run Compliance Audit"):
                         {"role": "user", "content": f"Audit this claim: {input_text}"}
                     ]
                 )
-
                 result = message.content[0].text
-
                 if "FAIL" in result.upper():
                     st.error("🚨 AUDIT RESULT: FAIL")
                 else:
                     st.success("✅ AUDIT RESULT: PASS")
-
                 st.markdown("### Compliance Report")
                 st.write(result)
-
         except Exception as e:
-            st.error(f"An error occurred: {e}")
+            if "529" in str(e) or "overloaded" in str(e).lower():
+                st.warning("⏳ Anthropic API is temporarily busy. This is not an error with the tool — please wait 30 seconds and try again.")
+            else:
+                st.error(f"An error occurred: {e}")
 
 st.markdown("---")
 st.caption("Legal Disclaimer: This tool is for decision support only. Final approval must be granted by a qualified MLR professional.")
