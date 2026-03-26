@@ -2,7 +2,7 @@
 
 **Open-source AI agent that audits pharma promotional materials for FDA/EMA Fair Balance compliance violations — result in 30 seconds.**
 
-Built by [Steinkreuz](https://steinkreuz.org) — the open-source agentic factory for oncology pharma.
+Built by [Standard Agentics](https://standardagentics.org) — open-source agentic infrastructure for the full drug development journey.
 
 ---
 
@@ -34,7 +34,7 @@ pip install streamlit anthropic
 streamlit run app.py
 ```
 
-1. Enter your Anthropic API key in the sidebar
+1. Add your Anthropic API key to the `.env` file
 2. Paste your promotional text or clinical claim
 3. Click **Run Compliance Audit**
 4. Receive PASS/FAIL with regulation cited and recommended fix
@@ -57,4 +57,4 @@ MIT — free to use, fork, deploy, and audit the code.
 
 *Legal Disclaimer: This tool is for decision support only. Final approval must be granted by a qualified MLR professional.*
 
-*Built by Steinkreuz — the open-source agentic factory for oncology pharma. [steinkreuz.org](https://steinkreuz.org)*    
+*Built by [Standard Agentics](https://standardagentics.org) — open-source agentic infrastructure for the full drug development journey.*
