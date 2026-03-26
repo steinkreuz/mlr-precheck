@@ -5,10 +5,10 @@ import os
 
 load_dotenv()
 
-# Steinkreuz Project #1: MLR-PreCheck
+# Standard Agentics Project #1: MLR-PreCheck
 # Open-source Fair Balance and Off-Label Auditor
 
-st.set_page_config(page_title="Steinkreuz | MLR-PreCheck", page_icon="🧬")
+st.set_page_config(page_title="Standard Agentics | MLR-PreCheck", page_icon="🧬")
 
 st.title("🧬 MLR-PreCheck")
 st.subheader("Open-Source Oncology Compliance Auditor")
@@ -16,7 +16,7 @@ st.markdown("---")
 
 with st.sidebar:
     st.header("About")
-    st.info("Built by Steinkreuz — the open-source agentic factory for oncology pharma. [steinkreuz.org](https://steinkreuz.org)")
+    st.info("Built by [Standard Agentics](https://standardagentics.org) — open-source agentic infrastructure for the full drug development journey.")
     st.caption("Set your ANTHROPIC_API_KEY in the .env file to run this tool locally.")
 
 st.write("Paste the promotional text or clinical claim you wish to audit below.")
